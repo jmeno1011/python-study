@@ -1,16 +1,15 @@
-from flask import Flask, url_for
+from flask import Flask
+from flask_cors import CORS
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route('/')
 def index():
     return 'Index Page'
 
-
-@app.route('/hello')
-def hello_world():
+@app.route('/world')
+def world():
     return 'Hello World!'
-
 
 @app.route("/login")
 def login():
